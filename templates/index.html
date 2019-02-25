@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% set active_page = "home" %}
+{% block content %}
+{{ super () }}
+
+<div class="jumbotron jumbotron-fluid my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="assets/img/logo_crop.png" style="width:100%"/>
+      </div>
+      <div class="col-md-8">
+         <h1 class="display-3">{{ contents.name }}</h1>
+         <div class="lead">{{ contents.tagline }}</div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-6">
+    <h3>Overview</h3>
+      {{ contents.overview }}
+    <h5>Information</h5>
+    <ul>
+      {% for item in contents.information %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</div> 
+
+<h3 class="my-3"><span class="badge badge-secondary">News</span></h3>
+
+{% endblock %}
