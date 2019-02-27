@@ -8,7 +8,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <img src="assets/img/logo_crop.png" style="width:100%"/>
+        <img src="assets/img/logo.svg" style="width:100%"/>
       </div>
       <div class="col-md-8">
          <h1 class="display-3">{{ contents.name }}</h1>
@@ -23,16 +23,19 @@
   <div class="col-6">
     <h3>Overview</h3>
       {{ contents.overview }}
-    <h5>Information</h5>
-    <ul>
-      {% for item in contents.information %}
-        <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
+  </div>
+
+  <div class="col-6">
+     <h3 class="my-3"><span class="badge badge-info">Upcoming Events</span></h3>
+     <ul>
+         {% for item in contents.upcoming_events %}
+            <li>{{ item }}</li>
+         {% endfor %}
+     </ul>
+     <h3 class="my-3"><span class="badge badge-info">People</span></h3>
   </div>
 
 </div> 
 
-<h3 class="my-3"><span class="badge badge-secondary">News</span></h3>
 
 {% endblock %}
